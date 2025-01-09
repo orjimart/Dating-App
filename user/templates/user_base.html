@@ -1,0 +1,463 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/odometer.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/jquery.animatedheadline.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+    <!-- <link rel="stylesheet" href="assets/css/dark.css"> -->
+
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}" type="image/x-icon">
+
+    <title>Bwave Dating - Let's get married</title>
+
+
+</head>
+
+<body>
+    <!-- ==========Preloader========== -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- ==========Preloader========== -->
+
+    <!-- ==========Overlay========== -->
+    <div class="overlay"></div>
+    <a href="index.html#" class="scrollToTop">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <!-- ==========Overlay========== -->
+
+    <!-- ==========Header-Section========== -->
+    <header class="header-section">
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="logo">
+                    <a href="{% url 'home' %}">
+                        <img src="{% static 'assets/images/logo/logo.png' %}" alt="logo">
+                    </a>
+                </div>
+                <ul class="menu">
+                    <li>
+                        <a href="{% url 'self_profile' %}" class="active">My Profile</a>
+                        <!-- <ul class="submenu">
+                            <li>
+                                <a href="index.html" class="active">Home One</a>
+                            </li>
+                            <li>
+                                <a href="index2.html">Home Two</a>
+                            </li>
+                        </ul> -->
+                    </li>
+                    <!-- <li>
+                        <a href="{% url 'community' %}">My Groups</a>
+                    </li> -->
+                    <li>
+                        <a href="{% url 'members' %}">Find Friends</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'shop' %}">Chats</a>
+                    </li>
+                    <!-- <li>
+                        <a href="index.html#">pages</a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="user-setting.html">User Panel</a>
+                            </li>
+                            <li>
+                                <a href="about.html">About Us</a>
+                            </li>
+                            <li>
+                                <a href="community-single.html">Community Single</a>
+                            </li>
+                            <li>
+                                <a href="members.html">Members</a>
+                            </li>
+                            <li>
+                                <a href="shop3.html">Shop sidebar</a>
+                            </li>
+                            <li>
+                                <a href="single-profile.html">Single Profile One</a>
+                            </li>
+                            <li>
+                                <a href="single-profile2.html">Single Profile Two</a>
+                            </li>
+                            <li>
+                                <a href="single-profile3.html">Single Profile Three</a>
+                            </li>
+                            <li>
+                                <a href="single-shope.html">Shop Details</a>
+                            </li>
+                            <li>
+                                <a href="contact.html">Contact</a>
+                            </li>
+                            <li>
+                                <a href="login.html">Login</a>
+                            </li>
+                            <li>
+                                <a href="register.html">Register</a>
+                            </li>
+                            <li>
+                                <a href="404.html">404</a>
+                            </li>
+                            <li>
+                                <a href="503.html">503</a>
+                            </li>
+                        </ul>
+                    </li> -->
+                    <!-- <li>
+                        <a href="{% url 'blogs' %}">Media</a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="blog.html">Blog</a>
+                            </li>
+                            <li>
+                                <a href="blog-details.html">Blog Single</a>
+                            </li>
+                        </ul>
+                    </li> -->
+                    <li class="separator">
+                        <span>|</span>
+                    </li>
+                    <li>
+                        <div class="serch-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="language-select">
+                            <select class="select-bar">
+                                <option value="">EN</option>
+                                <option value="">IN</option>
+                                <option value="">BN</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="user-profile">
+                        <a href="index.html#">
+                            <img src="{% static 'assets/images/user-demo.png' %}" alt="">
+                        </a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="{% url 'self_profile' %}">Profile</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'user_logout' %}">Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="header-bar d-lg-none">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<!-- flash message modal -->
+    
+    <div class="modal fade" id="flash-message-modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="top-img">
+                        <img src="{% static 'assets/images/notification.png' %}" width="460px" height="auto" alt="">
+                    </div>
+                    <div class="main-content">
+                        {% if messages %}
+                            <p >
+                                {% for message in messages %}
+                                    <h4 class="{{ message.tags }}">{{ message }}</h4>
+                                {% endfor %}
+                            </p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+	{% block content %}
+
+
+
+
+
+
+	{% endblock %}
+
+
+    <!-- ==========Newslater-Section========== -->
+    <footer class="footer-section">
+        <img class="shape1" src="{% static 'assets/images/footer/f-shape.png' %}" alt="">
+        <img class="shape2" src="{% static 'assets/images/footer/flower01.png' %}" alt="">
+        <img class="shape3" src="{% static 'assets/images/footer/right-shape.png' %}" alt="">
+        <div class="newslater-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-8">
+                        <div class="newslater-container">
+                            <div class="newslater-wrapper">
+                                <div class="icon">
+                                    <img src="{% static 'assets/images/footer/n-icon.png' %}" alt="">
+                                </div>
+                                <p class="text">Sign up to recieve a monthly email on the latest news!</p>
+                                <form class="newslater-form">
+                                    <input type="text" placeholder="Your Email Address">
+                                    <button type="submit">
+                                        <i class="fab fa-telegram-plane"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer-links">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <hr class="hr">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="link-wrapper one">
+                            <h4 class="f-l-title">
+                                Our Information
+                            </h4>
+                            <ul class="f-solial-links">
+                                <li>
+                                    <a href="index.html#">
+                                        <i class="fas fa-angle-double-right"></i> About Us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html#">
+                                        <i class="fas fa-angle-double-right"></i> Contact Us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html#">
+                                        <i class="fas fa-angle-double-right"></i> Customer Reviews
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html#">
+                                        <i class="fas fa-angle-double-right"></i> Success Stories
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html#">
+                                        <i class="fas fa-angle-double-right"></i> Business License
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="link-wrapper two">
+                            <h4 class="f-l-title">
+                                My Account
+                            </h4>
+                            <ul class="f-solial-links">
+                                <li>
+                                    <a href="index.html#">
+                                        <i class="fas fa-angle-double-right"></i> Manage Account
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html#">
+                                        <i class="fas fa-angle-double-right"></i> Safety Tips
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html#">
+                                        <i class="fas fa-angle-double-right"></i> Account Varification
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html#">
+                                        <i class="fas fa-angle-double-right"></i> Safety & Security
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html#">
+                                        <i class="fas fa-angle-double-right"></i> Membership Level
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="link-wrapper three">
+                            <h4 class="f-l-title">
+                                help center
+                            </h4>
+                            <ul class="f-solial-links">
+                                <li>
+                                    <a href="index.html#">
+                                        <i class="fas fa-angle-double-right"></i> Help centre
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html#">
+                                        <i class="fas fa-angle-double-right"></i> FAQ
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html#">
+                                        <i class="fas fa-angle-double-right"></i>Quick Start Guide
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html#">
+                                        <i class="fas fa-angle-double-right"></i>Tutorials
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html#">
+                                        <i class="fas fa-angle-double-right"></i>Associate Blog
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="link-wrapper four">
+                            <h4 class="f-l-title">
+                                legal
+                            </h4>
+                            <ul class="f-solial-links">
+                                <li>
+                                    <a href="index.html#">
+                                        <i class="fas fa-angle-double-right"></i> Privacy policy
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html#">
+                                        <i class="fas fa-angle-double-right"></i> End User Agreements
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html#">
+                                        <i class="fas fa-angle-double-right"></i> Refund Policy
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html#">
+                                        <i class="fas fa-angle-double-right"></i> Cookie policy
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html#">
+                                        <i class="fas fa-angle-double-right"></i> Report abuse
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <hr class="hr2">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 align-self-center">
+                        <div class="copyr-text">
+                            <span>
+                                Copyright © 2021.All Rights Reserved By
+                            </span>
+                            <a href="index.html#">Peyamba</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul class="footer-social-links">
+                            <li>
+                                <a href="index.html#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="index.html#">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="index.html#">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="index.html#">
+                                    <i class="fab fa-dribbble"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ==========Newslater-Section========== -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        // Check if there are messages
+        $(document).ready(function () {
+            // If there are messages, show the modal
+            {% if messages %}
+            $('#flash-message-modal').modal('show');
+            {% endif %}
+        });
+    </script>
+
+
+
+    <script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/modernizr-3.6.0.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/heandline.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/countdown.min.js' %}"></script>
+    <script src="{% static 'assets/js/odometer.min.js' %}"></script>
+    <script src="{% static 'assets/js/viewport.jquery.js' %}"></script>
+    <script src="{% static 'assets/js/nice-select.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+
+{% extends 'user_base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+
+<section class="breadcrumb-area profile-bc-area">
+    <div class="container">
+        <div class="content">
+            <h2 class="title extra-padding">
+                Single Profile
+            </h2>
+            <ul class="breadcrumb-list extra-padding">
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    Single Profile
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+    <!-- ========= Profile Section Start -->
+  
+    <section class="profile-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-4 col-lg-5 col-md-7">
+                    <div class="left-profile-area">
+                        <div class="profile-about-box">
+                            <div class="top-bg"></div>
+                            <div class="p-inner-content">
+                                <div class="profile-img">
+                                    <img src="{% if profile_user.cover_photo %}{{ profile_user.cover_photo.url }}{% else %}{% static 'assets/images/profile/user-profile.jpg' %}{% endif %}" alt="User Profile Picture">
+                                </div>
+                                <h5 class="name">{{ profile_user.name }}</h5>
+                                <ul class="p-b-meta-one">
+                                    <li>
+                                        <span>{{ age }} Years Old</span>
+                                    </li>
+                                    <li>
+                                        <span> <i class="fas fa-map-marker-alt"></i>{{ profile_user.city }}, {{ profile_user.country }}</span>
+                                    </li>
+                                </ul>
+                                <div class="p-b-meta-two">
+                                    <div class="left">
+                                        {% if are_friends %}
+                                        <a href="" class="btn btn-info">
+                                            <i class="fas fa-comments"></i> Chat
+                                        </a>
+                                        {% endif %}
+
+                                    </div>
+                                    <div class="right">
+                                        {% if are_friends %}
+                                            <!-- If they are friends, show the Chat button -->
+                                            <a href="{% url 'unfriend' profile_user.id %}" class="btn btn-dark">
+                                                Un-Firend
+                                            </a>
+                                        {% elif profile_user.id in sent_requests_ids %}
+                                            <!-- If a friend request has been sent, show the Cancel Request button -->
+                                            <a href="{% url 'cancel_friend_request' profile_user.id %}" class="btn btn-danger">
+                                                <i class="fas fa-times"></i> Cancel Request
+                                            </a>
+                                        {% else %}
+                                            <!-- If not friends and no request sent, show the Add Friend button -->
+                                            <a href="{% url 'send_friend_request' profile_user.id %}" class="custom-button">
+                                                <i class="fab fa-cloudversify"></i> Add Friend
+                                            </a>
+                                        {% endif %}
+                                    </div>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-5 col-lg-6">
+                    <div class="profile-main-content">
+                      
+                        <div class="info-bo">
+                            <div class="header">
+                                <h4 class="title">
+                                    Base
+                                </h4>
+                            </div>
+                            <div class="content">
+                                <ul class="infolist">
+                                    <li><span class="font-weight-bold mr-4"> Name: </span> <span> {{ profile_user.name }}</span></li>
+                                    <li><span class="font-weight-bold mr-4"> Birthday: </span> <span> {{ profile_user.birthday }}</span></li>
+                                    <li><span class="font-weight-bold mr-4"> I am a: </span> <span> {{ profile_user.gender }}</span></li>
+                                    <li><span class="font-weight-bold mr-4"> Looking for a: </span> <span> {{ profile_user.looking_for }}</span></li>
+                                    <li><span class="font-weight-bold mr-4"> Marital status: </span> <span> {{ profile_user.marital_status }}</spa></li>
+                                    <li><span class="font-weight-bold mr-4">Country: </span> <span> {{ profile_user.country }}</span></li>
+                                    <li><span class="font-weight-bold mr-4">City: </span> <span> {{ profile_user.city }}</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="info-bo mt-5">
+                            <div class="header">
+                                <h4 class="title">
+                                    Myself Summary
+                                </h4>
+                            </div>
+                            <div class="content">
+                                <p class="text">
+                                    {{ profile_user.description }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="info-bo mt-5 ">
+                            <div class="header">
+                                <h4 class="title">
+                                    Lifestyle
+                                </h4>
+                            </div>
+                            <div class="content">
+                                <ul class="infolist">
+                                    <li><span class="font-weight-bold mr-4">Favorite TV Shows: </span><span>{{ profile_user.fav_tv_shows }}</span></li>
+                                    <li><span class="font-weight-bold mr-4" >Favorite Music Bands: </span><span> {{ profile_user.fav_music_bands }} </span></li>
+                                    <li><span class="font-weight-bold mr-4">Favorite Movies: </span><span> {{ profile_user.fav_movies }} </span></li>
+                                    <li><span class="font-weight-bold mr-4">Favorite Games: </span><span> {{ profile_user.fav_games }} </span></li>
+                                </ul>
+                            </div>
+                        </div>
+                       
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- ========= Profile Section Start -->
+
+
+
+{% endblock %}

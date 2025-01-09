@@ -1,0 +1,104 @@
+
+{% extends 'user_base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+    <section class="breadcrumb-area profile-bc-area">
+        <div class="container">
+            <div class="content">
+                <h2 class="title extra-padding">
+                        Find Friends
+                </h2>
+                <ul class="breadcrumb-list extra-padding">
+                    <li>
+                        <a href="">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        Connect With Members
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="community-section inner-page">
+        <div class="container">
+           
+            <div class="row">
+              
+              
+                {% for user in page_obj %}
+                <div class="col-lg-6">
+                    <div class="single-friend">
+                        <!-- Check if the user has a cover photo, otherwise use the default -->
+                        <img src="{% if user.cover_photo %}{{ user.cover_photo.url }}{% else %}{% static 'assets/images/profile/user-profile.jpg' %}{% endif %}" alt="User Profile Picture">
+                        <div class="content">
+                            <a href="{% url 'member_profile' user.id %}" class="name">
+                                {{ user.name }}
+                                <span class="isvarify">
+                                    <i class="fas fa-check-circle"></i>
+                                </span>
+                            </a>
+                            <p class="date">
+                                {{ user.city }}, {{ user.country }}
+                            </p>
+            
+                            {% if user.id in friends_ids %}
+                                <!-- If the user is already a friend, show the Chat button -->
+                                <a href="" class="connnect-btn">
+                                    <i class="fas fa-comments"></i> Chat
+                                </a>
+                            {% elif user.id in sent_requests_ids %}
+                                <!-- If a friend request has been sent, show the Cancel Request button -->
+                                <a href="{% url 'cancel_friend_request' user.id %}" class="connnect-btn">
+                                    <i class="fas fa-times"></i> Cancel Request
+                                </a>
+                            {% else %}
+                                <!-- If no friend request has been sent and they are not friends, show the Connect button -->
+                                <a href="{% url 'send_friend_request' user.id %}" class="connnect-btn">
+                                    Connect
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            
+            
+
+
+               
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="pagination-area text-center">
+                        {% if page_obj.has_previous %}
+                            <a href="?page={{ page_obj.previous_page_number }}"><i class="fas fa-angle-double-left"></i></a>
+                        {% endif %}
+                
+                        {% for num in page_obj.paginator.page_range %}
+                            {% if page_obj.number == num %}
+                                <a href="#" class="active">{{ num }}</a>
+                            {% else %}
+                                <a href="?page={{ num }}">{{ num }}</a>
+                            {% endif %}
+                        {% endfor %}
+                
+                        {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}"><i class="fas fa-angle-double-right"></i></a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==========Community-Sectionn========== -->
+
+    {% endblock %}

@@ -1,0 +1,89 @@
+{% extends 'user_base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+
+    <!-- ==========Breadcrumb-Section========== -->
+    <section class="breadcrumb-area profile-bc-area">
+        <div class="container">
+            <div class="content">
+                <h2 class="title extra-padding">
+                    Pending Friend Request
+                </h2>
+                <ul class="breadcrumb-list extra-padding">
+                    <li>
+                        <a href="">
+                            Home
+                        </a>
+                    </li>
+                        <li>
+                            Friend Request
+                        </li>
+                  
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- ==========Breadcrumb-Section========== -->
+
+
+
+    <!-- ========= Profile Section Start -->
+
+    <section class="user-setting-section">
+        <div class="container">
+            <div class="row">
+            
+                <div class="col-xl-12 col-md-8 ">
+                    <div class="page-title">
+                        Friend Request
+                        <div class="right">
+                            <a href="{% url 'members' %}" data-toggle="modal" data-target="#exampleModalCenter">Find Friends</a>
+                            
+                        </div> 
+                    </div> 
+                    <div class="frind-box">
+                        {% for request in friend_requests %}
+                            <div class="single-friend mt-20">
+                                <div class="left">
+                                    <!-- You can display the user's profile picture here -->
+                                    <img src="{% if user.cover_photo %}{{ user.cover_photo.url }}{% else %}{% static 'assets/images/profile/user-profile.jpg' %}{% endif %}" alt="User Profile Picture">
+
+                                    <a href="{% url 'member_profile' user.id %}">
+
+                                    <div class="content">
+                                        <h5 class="name"> {{ user.name }} <i class="fas fa-certificate"></i></h5>
+                                        <span class="age">{{ age }} Years Old</span>
+                                        <span class="separator"></span>
+                                        <span class="location"><i class="fas fa-map-marker-alt"></i> {{ user.city }}, {{ user.country }} </span>
+                                    </div>
+
+                                </a>
+
+                                </div>
+                                <div class="right">
+                                    <!-- Link to accept the friend request -->
+                                    <a href="{% url 'accept_friend_request' request.id %}" class="accept">Accept</a>
+                                    <!-- Link to delete (ignore) the friend request -->
+                                    <a href="{% url 'delete_friend_request' request.id %}" class="ignore">Delete</a>
+                                </div>
+                            </div>
+                        {% empty %}
+                            <p>No friend requests at the moment.</p>
+                        {% endfor %}
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    {% endblock %}

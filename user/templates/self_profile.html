@@ -1,0 +1,317 @@
+
+
+{% extends 'user_base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+
+
+        <!-- ==========Breadcrumb-Section========== -->
+        <section class="breadcrumb-area profile-bc-area">
+            <div class="container">
+                <div class="content">
+                    <h2 class="title extra-padding">
+                        Welcome {{ user.username }}
+                    </h2>
+                    <ul class="breadcrumb-list extra-padding">
+                        <li>
+                            <a href="{% url 'home' %}">
+                                Home
+                            </a>
+                        </li>
+    
+                        <li>
+                            See Whats Happening
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- ==========Breadcrumb-Section========== -->
+    
+    
+        <!-- ========= Profile Section Start -->
+        <section class="profile-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-4 col-lg-5 col-md-7">
+                        <div class="left-profile-area">
+                            <div class="profile-about-box">
+                                <div class="top-bg"></div>
+                                <div class="p-inner-content">
+                                    <div class="profile-img">
+                                        <img src="{% if cover_photo %}{{ cover_photo }}{% else %}{% static 'assets/images/profile/user-profile.jpg' %}{% endif %}" alt="">
+                                    </div>
+                                    <h5 class="name">
+                                        {{user.name}}
+                                    </h5>
+                                    <p class="mt-2"> {{ user.gender }} {{ user.birthday|date:"F j, Y" }}</p> 
+    
+    
+                                    <ul class="p-b-meta-one">
+                                        <li>
+                                            <span> {{ age }} Years Old</span>
+                                        </li>
+                                        <li>
+                                            <span> <i class="fas fa-map-marker-alt"></i>{{user.city}}</span>
+                                        </li>
+                                    </ul>
+                                    <div class="p-b-meta-two">
+                                        <div class="right">
+                                            <a href="{% url 'user_settings' %}" class="btn btn-info">
+                                                Edit Profile
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="profile-meta-box">
+                                <ul class="p-m-b">
+                                    <li>
+                                        <a href="single-profile3.html#" data-toggle="modal" data-target="#usermessage">
+                                            <i class="far fa-envelope"></i>
+                                            <div class="number">04</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="single-profile3.html#" data-toggle="modal" data-target="#usernotification">
+                                            <i class="far fa-bell"></i>
+                                            <div class="number">04</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="single-profile3.html#">
+                                            <i class="fas fa-cogs"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div> -->
+                            
+                        </div>
+                    </div>
+                  
+                    <div class="col-xl-5 col-lg-6">
+                        <div class="profile-main-content">
+                            <ul class="top-menu">
+                                <li>
+                                    <a href="{% url 'self_profile' %}" >
+                                        Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" id="friends-link">
+                                        Friends
+                                        <div class="num">{{ num_friends }}</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'friend_request' %}">
+                                        Friend Request
+                                        <div class="num">{{ num_friend_requests }}</div>
+                                    </a>
+                                </li>
+                            </ul>
+                    
+                            <div class="profile-friends">
+                                <div class="c-r-heading">
+                                    <h6 class="title mt-3">
+                                        {% if friend_type == "friend_requests" %}
+                                        Friend Requests
+                                        {% elif friend_type == "friends" %}
+                                        Your Friends
+                                        {% else %}
+                                        People You May Know
+                                        {% endif %}
+                                    </h6>
+                                </div>
+                            
+                                {% if friend_type == "friend_requests" %}
+                                    {% for friend_request in incoming_friend_requests %}
+                                    <div class="single-friend">
+                                        <img src="{% if friend_request.from_user.cover_photo %}{{ friend_request.from_user.cover_photo.url }}{% else %}{% static 'assets/images/profile/user-profile.jpg' %}{% endif %}" alt="Profile picture of {{ friend_request.from_user.username }}">
+                                        <div class="content">
+                                            <a href="{% url 'member_profile' friend_request.from_user.id %}" class="name">
+                                                {{ friend_request.from_user.username }}
+                                                <div class="isvarify">
+                                                    <i class="fas fa-check-circle"></i>
+                                                </div>
+                                            </a>
+                                            <p class="date">
+                                                Joined {{ friend_request.from_user.date_joined|date:"F Y" }}
+                                            </p>
+                    
+                                            <a href="{% url 'accept_friend_request' friend_request.id %}" class="btn btn-success">Accept</a>
+                                            <a href="{% url 'delete_friend_request' friend_request.id %}" class="btn btn-danger">Reject</a>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                {% else %}
+                                    {% for friend in friends_to_display %}
+                                    <div class="single-friend">
+                                        <img src="{% if friend.cover_photo %}{{ friend.cover_photo.url }}{% else %}{% static 'assets/images/profile/user-profile.jpg' %}{% endif %}" alt="Profile picture of {{ friend.username }}">
+                                        <div class="content">
+                                            <a href="{% url 'member_profile' friend.id %}" class="name">
+                                                {{ friend.username }}
+                                                <div class="isvarify">
+                                                    <i class="fas fa-check-circle"></i>
+                                                </div>
+                                            </a>
+                                            <p class="date">
+                                                Joined {{ friend.date_joined|date:"F Y" }}
+                                            </p>
+                                            <a href="{% url 'member_profile' friend.id %}" class="btn btn-info">View Profile</a>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const friendsLink = document.getElementById('friends-link');
+                        const profileFriendsDiv = document.querySelector('.profile-friends');
+                    
+                        friendsLink.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            
+                            fetch('{% url "get_friends" %}')
+                                .then(response => response.json())
+                                .then(data => {
+                                    let friendsHTML = `
+                                        <div class="c-r-heading">
+                                            <h6 class="title mt-3">Your Friends</h6>
+                                        </div>
+                                    `;
+                                    
+                                    data.friends.forEach(friend => {
+                                friendsHTML += `
+                                    <div class="single-friend">
+                                        <img src="${friend.cover_photo || '{% static "assets/images/profile/user-profile.jpg" %}'}" alt="Profile picture of ${friend.username}">
+                                        <div class="content">
+                                            <a href="/user/members/profile/${friend.id}/" class="name">
+                                                ${friend.username}
+                                                <div class="isvarify">
+                                                    <i class="fas fa-check-circle"></i>
+                                                </div>
+                                            </a>
+                                            <p class="date">
+                                                Joined ${friend.date_joined}
+                                            </p>
+                                            <a href="/user/members/profile/${friend.id}/" class="btn btn-info">View Profile</a>
+                                        </div>
+                                    </div>
+                                `;
+                            });
+                                    
+                                    profileFriendsDiv.innerHTML = friendsHTML;
+                                })
+                                .catch(error => console.error('Error:', error));
+                        });
+                    });
+                    </script>
+
+                    
+
+
+                    <div class="col-xl-3 col-lg-5 col-md-7">
+                        <div class="profile-aside-area">
+                            
+                            <div class="chat-request">
+                                <div class="c-r-heading">
+                                    <h6 class="title">
+                                        <i class="far fa-comments"></i> Your Chats
+                                    </h6>
+                                </div>
+                                <div class="c-r-content">
+                                    <div class="c-r-content-list">
+                                        <div class="single-c-r">
+                                            <div class="left">
+                                                <img src="{% static 'assets/images/profile/c-r-img1.png' %}" alt="">
+                                                <div class="active-online"></div>
+                                            </div>
+                                            <div class="right">
+                                                <h4 class="title">
+                                                    laura maria
+                                                </h4>
+                                                <p>
+                                                    true love is...
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="single-c-r">
+                                            <div class="left">
+                                                <img src="{% static 'assets/images/profile/c-r-img2.png' %}" alt="">
+                                            </div>
+                                            <div class="right">
+                                                <h4 class="title">
+                                                    laura maria
+                                                </h4>
+                                                <p>
+                                                    true love is...
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="single-c-r">
+                                            <div class="left">
+                                                <img src="{% static 'assets/images/profile/c-r-img3.png' %}" alt="">
+                                                <div class="active-online"></div>
+                                            </div>
+                                            <div class="right">
+                                                <h4 class="title">
+                                                    laura maria
+                                                </h4>
+                                                <p>
+                                                    true love is...
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="single-profile3.html#" class="load-more">
+                                        load More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+        <!-- ========= Profile Section Start -->
+    
+    
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% endblock %}
