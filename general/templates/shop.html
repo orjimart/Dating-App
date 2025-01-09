@@ -1,0 +1,1100 @@
+
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <!-- ==========Breadcrumb-Section========== -->
+    <section class="breadcrumb-area profile-bc-area">
+        <div class="container">
+            <div class="content">
+                <h2 class="title extra-padding">
+                    Shop 1
+                </h2>
+                <ul class="breadcrumb-list extra-padding">
+                    <li>
+                        <a href="{% url 'home' %}">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        Shop 1
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- ==========Breadcrumb-Section========== -->
+
+
+    <!-- Product widget section begin -->
+    <section class="product-category">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="filter-area">
+                                <div class="filter-main">
+                                    
+                                    <ul class="nav grid-button tab-menu"  role="tablist">
+                                        <li id="gird-view" class="gird-view">
+                                            <a class="active" id="nav-gird-tab" data-toggle="tab" href="shop2.html#nav-gird" role="tab" aria-controls="nav-gird" aria-selected="true">
+                                                <i class="fas fa-th"></i>
+                                            </a>
+                                            
+                                        </li>                            
+                                        <li id="list-view" class="list-view">
+                                            <a class="" id="nav-list-tab" data-toggle="tab" href="shop2.html#nav-list" role="tab" aria-controls="nav-list" aria-selected="false">
+                                                <i class="fas fa-bars"></i>
+                                            </a>
+                                        </li>                            
+                                    </ul>
+                                    <div class="right">
+                                        <div class="item">
+                                            <span class="show">Show :</span>
+                                            <select class="select-bar">
+                                                <option value="12">12</option>
+                                                <option value="15">15</option>
+                                                <option value="18">18</option>
+                                                <option value="21">21</option>
+                                                <option value="24">24</option>
+                                                <option value="27">27</option>
+                                                <option value="30">30</option>
+                                            </select>
+                                        </div>
+                                        <div class="item">
+                                            <span class="show">Sort By :</span>
+                                            <select class="select-bar">
+                                                <option value="showing">New</option>
+                                                <option value="exclusive">exclusive</option>
+                                                <option value="trending">trending</option>
+                                                <option value="most-view">most view</option>
+                                            </select>
+                                        </div>
+                                        <div class="serch-icon">
+                                            <i class="fas fa-search"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="search-box">
+                                    <input type="text" placeholder="Enter Your Text hear">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-gird" role="tabpanel" aria-labelledby="nav-gird-tab">
+                            <div class="row">
+                                <div class="col-xl-3 col-lg-4 col-md-6">
+                                    <div class="single-product">
+                                        <div class="img">
+                                            <img src="{% static 'assets/images/shoping/ShopPage_01/01.jpg' %}" alt="">
+                                            <span class="sale">Sale</span>
+                                            <ul class="more-links">
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-sliders-h"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="far fa-eye"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="content">
+                                            <span class="price"> 
+                                                $15
+                                            </span>
+                                            <h4 class="title">
+                                                Butterfly Rings
+                                            </h4>
+                                            <div class="review-area">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="separator">
+                                                    |
+                                                </span>
+                                                <span class="review-content">
+                                                    229 review
+                                                </span>
+                                            </div>
+                                            <a class="hover-effect" href="single-shope.html"><span class="font-16-semibold">Buy Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6">
+                                    <div class="single-product">
+                                        <div class="img">
+                                            <img src="{% static 'assets/images/shoping/ShopPage_01/02.jpg' %}" alt="">
+                                            <span class="sale">Sale</span>
+                                            <ul class="more-links">
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-sliders-h"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="far fa-eye"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="content">
+                                            <span class="price"> 
+                                                $15
+                                            </span>
+                                            <h4 class="title">
+                                                Butterfly Rings
+                                            </h4>
+                                            <div class="review-area">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="separator">
+                                                    |
+                                                </span>
+                                                <span class="review-content">
+                                                    229 review
+                                                </span>
+                                            </div>
+                                            <a class="hover-effect" href="single-shope.html"><span class="font-16-semibold">Buy Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6">
+                                    <div class="single-product">
+                                        <div class="img">
+                                            <img src="{% static 'assets/images/shoping/ShopPage_01/03.jpg' %}" alt="">
+                                            <span class="sale">Sale</span>
+                                            <ul class="more-links">
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-sliders-h"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="far fa-eye"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="content">
+                                            <span class="price"> 
+                                                $15
+                                            </span>
+                                            <h4 class="title">
+                                                Butterfly Rings
+                                            </h4>
+                                            <div class="review-area">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="separator">
+                                                    |
+                                                </span>
+                                                <span class="review-content">
+                                                    229 review
+                                                </span>
+                                            </div>
+                                            <a class="hover-effect" href="single-shope.html"><span class="font-16-semibold">Buy Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6">
+                                    <div class="single-product">
+                                        <div class="img">
+                                            <img src="{% static 'assets/images/shoping/ShopPage_01/04.jpg' %}" alt="">
+                                            <span class="sale">Sale</span>
+                                            <ul class="more-links">
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-sliders-h"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="far fa-eye"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="content">
+                                            <span class="price"> 
+                                                $15
+                                            </span>
+                                            <h4 class="title">
+                                                Butterfly Rings
+                                            </h4>
+                                            <div class="review-area">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="separator">
+                                                    |
+                                                </span>
+                                                <span class="review-content">
+                                                    229 review
+                                                </span>
+                                            </div>
+                                            <a class="hover-effect" href="single-shope.html"><span class="font-16-semibold">Buy Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6">
+                                    <div class="single-product">
+                                        <div class="img">
+                                            <img src="{% static 'assets/images/shoping/ShopPage_01/05.jpg' %}" alt="">
+                                            <span class="sale">Sale</span>
+                                            <ul class="more-links">
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-sliders-h"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="far fa-eye"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="content">
+                                            <span class="price"> 
+                                                $15
+                                            </span>
+                                            <h4 class="title">
+                                                Butterfly Rings
+                                            </h4>
+                                            <div class="review-area">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="separator">
+                                                    |
+                                                </span>
+                                                <span class="review-content">
+                                                    229 review
+                                                </span>
+                                            </div>
+                                            <a class="hover-effect" href="single-shope.html"><span class="font-16-semibold">Buy Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6">
+                                    <div class="single-product">
+                                        <div class="img">
+                                            <img src="{% static 'assets/images/shoping/ShopPage_01/06.jpg' %}" alt="">
+                                            <span class="sale">Sale</span>
+                                            <ul class="more-links">
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-sliders-h"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="far fa-eye"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="content">
+                                            <span class="price"> 
+                                                $15
+                                            </span>
+                                            <h4 class="title">
+                                                Butterfly Rings
+                                            </h4>
+                                            <div class="review-area">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="separator">
+                                                    |
+                                                </span>
+                                                <span class="review-content">
+                                                    229 review
+                                                </span>
+                                            </div>
+                                            <a class="hover-effect" href="single-shope.html"><span class="font-16-semibold">Buy Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6">
+                                    <div class="single-product">
+                                        <div class="img">
+                                            <img src="{% static 'assets/images/shoping/ShopPage_01/07.jpg' %}" alt="">
+                                            <span class="sale">Sale</span>
+                                            <ul class="more-links">
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-sliders-h"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="far fa-eye"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="content">
+                                            <span class="price"> 
+                                                $15
+                                            </span>
+                                            <h4 class="title">
+                                                Butterfly Rings
+                                            </h4>
+                                            <div class="review-area">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="separator">
+                                                    |
+                                                </span>
+                                                <span class="review-content">
+                                                    229 review
+                                                </span>
+                                            </div>
+                                            <a class="hover-effect" href="single-shope.html"><span class="font-16-semibold">Buy Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6">
+                                    <div class="single-product">
+                                        <div class="img">
+                                            <img src="{% static 'assets/images/shoping/ShopPage_01/08.jpg' %}" alt="">
+                                            <span class="sale">Sale</span>
+                                            <ul class="more-links">
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-sliders-h"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="far fa-eye"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="content">
+                                            <span class="price"> 
+                                                $15
+                                            </span>
+                                            <h4 class="title">
+                                                Butterfly Rings
+                                            </h4>
+                                            <div class="review-area">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="separator">
+                                                    |
+                                                </span>
+                                                <span class="review-content">
+                                                    229 review
+                                                </span>
+                                            </div>
+                                            <a class="hover-effect" href="single-shope.html"><span class="font-16-semibold">Buy Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6">
+                                    <div class="single-product">
+                                        <div class="img">
+                                            <img src="{% static 'assets/images/shoping/ShopPage_01/09.jpg' %}" alt="">
+                                            <span class="sale">Sale</span>
+                                            <ul class="more-links">
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-sliders-h"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="far fa-eye"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="content">
+                                            <span class="price"> 
+                                                $15
+                                            </span>
+                                            <h4 class="title">
+                                                Butterfly Rings
+                                            </h4>
+                                            <div class="review-area">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="separator">
+                                                    |
+                                                </span>
+                                                <span class="review-content">
+                                                    229 review
+                                                </span>
+                                            </div>
+                                            <a class="hover-effect" href="single-shope.html"><span class="font-16-semibold">Buy Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6">
+                                    <div class="single-product">
+                                        <div class="img">
+                                            <img src="{% static 'assets/images/shoping/ShopPage_01/10.jpg' %}" alt="">
+                                            <span class="sale">Sale</span>
+                                            <ul class="more-links">
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-sliders-h"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="far fa-eye"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="content">
+                                            <span class="price"> 
+                                                $15
+                                            </span>
+                                            <h4 class="title">
+                                                Butterfly Rings
+                                            </h4>
+                                            <div class="review-area">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="separator">
+                                                    |
+                                                </span>
+                                                <span class="review-content">
+                                                    229 review
+                                                </span>
+                                            </div>
+                                            <a class="hover-effect" href="single-shope.html"><span class="font-16-semibold">Buy Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6">
+                                    <div class="single-product">
+                                        <div class="img">
+                                            <img src="{% static 'assets/images/shoping/ShopPage_01/11.jpg' %}" alt="">
+                                            <span class="sale">Sale</span>
+                                            <ul class="more-links">
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-sliders-h"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="far fa-eye"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="content">
+                                            <span class="price"> 
+                                                $15
+                                            </span>
+                                            <h4 class="title">
+                                                Butterfly Rings
+                                            </h4>
+                                            <div class="review-area">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="separator">
+                                                    |
+                                                </span>
+                                                <span class="review-content">
+                                                    229 review
+                                                </span>
+                                            </div>
+                                            <a class="hover-effect" href="single-shope.html"><span class="font-16-semibold">Buy Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6">
+                                    <div class="single-product">
+                                        <div class="img">
+                                            <img src="{% static 'assets/images/shoping/ShopPage_01/12.jpg' %}" alt="">
+                                            <span class="sale">Sale</span>
+                                            <ul class="more-links">
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-sliders-h"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="far fa-eye"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="content">
+                                            <span class="price"> 
+                                                $15
+                                            </span>
+                                            <h4 class="title">
+                                                Butterfly Rings
+                                            </h4>
+                                            <div class="review-area">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="separator">
+                                                    |
+                                                </span>
+                                                <span class="review-content">
+                                                    229 review
+                                                </span>
+                                            </div>
+                                            <a class="hover-effect" href="single-shope.html"><span class="font-16-semibold">Buy Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-list" role="tabpanel" aria-labelledby="nav-list-tab">
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-4 col-md-6">
+                                    <div class="single-product-list-2">
+                                        <div class="img">
+                                            <img src="{% static 'assets/images/shoping/ShopPage_01/01.jpg' %}" alt="">
+                                            <span class="sale">Sale</span>
+                                            <ul class="more-links">
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-sliders-h"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="far fa-eye"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="content">
+                                            <span class="price"> 
+                                                $15
+                                            </span>
+                                            <h4 class="title">
+                                                Butterfly Rings
+                                            </h4>
+                                            <div class="review-area">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="separator">
+                                                    |
+                                                </span>
+                                                <span class="review-content">
+                                                    229 review
+                                                </span>
+                                            </div>
+                                            <a class="hover-effect" href="single-shope.html"><span class="font-16-semibold">Buy Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-4 col-md-6">
+                                    <div class="single-product-list-2">
+                                        <div class="img">
+                                            <img src="{% static 'assets/images/shoping/ShopPage_01/02.jpg' %}" alt="">
+                                            <span class="sale">Sale</span>
+                                            <ul class="more-links">
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-sliders-h"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="far fa-eye"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="content">
+                                            <span class="price"> 
+                                                $15
+                                            </span>
+                                            <h4 class="title">
+                                                Butterfly Rings
+                                            </h4>
+                                            <div class="review-area">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="separator">
+                                                    |
+                                                </span>
+                                                <span class="review-content">
+                                                    229 review
+                                                </span>
+                                            </div>
+                                            <a class="hover-effect" href="single-shope.html"><span class="font-16-semibold">Buy Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-4 col-md-6">
+                                    <div class="single-product-list-2">
+                                        <div class="img">
+                                            <img src="{% static 'assets/images/shoping/ShopPage_01/03.jpg' %}" alt="">
+                                            <span class="sale">Sale</span>
+                                            <ul class="more-links">
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-sliders-h"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="far fa-eye"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="content">
+                                            <span class="price"> 
+                                                $15
+                                            </span>
+                                            <h4 class="title">
+                                                Butterfly Rings
+                                            </h4>
+                                            <div class="review-area">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="separator">
+                                                    |
+                                                </span>
+                                                <span class="review-content">
+                                                    229 review
+                                                </span>
+                                            </div>
+                                            <a class="hover-effect" href="single-shope.html"><span class="font-16-semibold">Buy Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-4 col-md-6">
+                                    <div class="single-product-list-2">
+                                        <div class="img">
+                                            <img src="{% static 'assets/images/shoping/ShopPage_01/04.jpg' %}" alt="">
+                                            <span class="sale">Sale</span>
+                                            <ul class="more-links">
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-sliders-h"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="far fa-eye"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="content">
+                                            <span class="price"> 
+                                                $15
+                                            </span>
+                                            <h4 class="title">
+                                                Butterfly Rings
+                                            </h4>
+                                            <div class="review-area">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="separator">
+                                                    |
+                                                </span>
+                                                <span class="review-content">
+                                                    229 review
+                                                </span>
+                                            </div>
+                                            <a class="hover-effect" href="single-shope.html"><span class="font-16-semibold">Buy Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-4 col-md-6">
+                                    <div class="single-product-list-2">
+                                        <div class="img">
+                                            <img src="{% static 'assets/images/shoping/ShopPage_01/05.jpg' %}" alt="">
+                                            <span class="sale">Sale</span>
+                                            <ul class="more-links">
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-sliders-h"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="far fa-eye"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="content">
+                                            <span class="price"> 
+                                                $15
+                                            </span>
+                                            <h4 class="title">
+                                                Butterfly Rings
+                                            </h4>
+                                            <div class="review-area">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="separator">
+                                                    |
+                                                </span>
+                                                <span class="review-content">
+                                                    229 review
+                                                </span>
+                                            </div>
+                                            <a class="hover-effect" href="single-shope.html"><span class="font-16-semibold">Buy Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-4 col-md-6">
+                                    <div class="single-product-list-2">
+                                        <div class="img">
+                                            <img src="{% static 'assets/images/shoping/ShopPage_01/06.jpg' %}" alt="">
+                                            <span class="sale">Sale</span>
+                                            <ul class="more-links">
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-sliders-h"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="far fa-eye"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="content">
+                                            <span class="price"> 
+                                                $15
+                                            </span>
+                                            <h4 class="title">
+                                                Butterfly Rings
+                                            </h4>
+                                            <div class="review-area">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="separator">
+                                                    |
+                                                </span>
+                                                <span class="review-content">
+                                                    229 review
+                                                </span>
+                                            </div>
+                                            <a class="hover-effect" href="single-shope.html"><span class="font-16-semibold">Buy Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-4 col-md-6">
+                                    <div class="single-product-list-2">
+                                        <div class="img">
+                                            <img src="{% static 'assets/images/shoping/ShopPage_01/07.jpg' %}" alt="">
+                                            <span class="sale">Sale</span>
+                                            <ul class="more-links">
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-sliders-h"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="far fa-eye"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="content">
+                                            <span class="price"> 
+                                                $15
+                                            </span>
+                                            <h4 class="title">
+                                                Butterfly Rings
+                                            </h4>
+                                            <div class="review-area">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="separator">
+                                                    |
+                                                </span>
+                                                <span class="review-content">
+                                                    229 review
+                                                </span>
+                                            </div>
+                                            <a class="hover-effect" href="single-shope.html"><span class="font-16-semibold">Buy Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-4 col-md-6">
+                                    <div class="single-product-list-2">
+                                        <div class="img">
+                                            <img src="{% static 'assets/images/shoping/ShopPage_01/08.jpg' %}" alt="">
+                                            <span class="sale">Sale</span>
+                                            <ul class="more-links">
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-sliders-h"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop2.html#">
+                                                        <i class="far fa-eye"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="content">
+                                            <span class="price"> 
+                                                $15
+                                            </span>
+                                            <h4 class="title">
+                                                Butterfly Rings
+                                            </h4>
+                                            <div class="review-area">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="separator">
+                                                    |
+                                                </span>
+                                                <span class="review-content">
+                                                    229 review
+                                                </span>
+                                            </div>
+                                            <a class="hover-effect" href="single-shope.html"><span class="font-16-semibold">Buy Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="pagination-area text-center">
+                                <a href="shop2.html#"><i class="fas fa-angle-double-left"></i><span></span></a>
+                                <a href="shop2.html#">1</a>
+                                <a href="shop2.html#">2</a>
+                                <a href="shop2.html#" class="active">3</a>
+                                <a href="shop2.html#">4</a>
+                                <a href="shop2.html#">5</a>
+                                <a href="shop2.html#"><i class="fas fa-angle-double-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product widget section end -->
+
+    {% endblock %}

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/odometer.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/jquery.animatedheadline.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+  <!-- <link rel="stylesheet" href="assets/css/dark.css"> -->
+
+  <link rel="shortcut icon" href="{% static 'assets/images/favicon.png'% } " type="image/x-icon">
+
+  <title>Bwave Dating - Let's get married</title>
+
+
+</head>
+
+<body>
+  <!-- ==========Preloader========== -->
+  <div class="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-icon">
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ==========Preloader========== -->
+
+
+
+  <!-- ========== Login & Registation Section ========== -->
+  <section class="log-reg">
+    <div class="top-menu-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5">
+            <a href="{% url 'home' %}" class="backto-home"><i class="fas fa-chevron-left"></i> Back to peyamba</a>
+          </div>
+          <div class="col-lg-7 ">
+            <div class="logo">
+              <img src="{% static 'assets/images/logo2.png' %}" alt="logo">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row justify-content-end">
+        <div class="image">
+        </div>
+        <div class="col-lg-7">
+          <div class="log-reg-inner">
+            <div class="section-header">
+              <h2 class="title">
+                Welcome to PEYAMBA
+              </h2>
+              <p>
+                Let's create your profile! Just fill in the fields below, and
+                we’ll get a new account.
+              </p>
+            </div>
+            <div class="main-content">
+              
+              <form method="post" action="{% url 'register' %}">
+                {% csrf_token %}
+                <h4 class="content-title">Account Details</h4>
+                
+                <div class="form-group">
+                    <label for="id_username">Username*</label>
+                    <input type="text" class="my-form-control" name="username" id="id_username" placeholder="Enter Your Username" required>
+                    {% if form.username.errors %}
+                        <div class="text-danger">{{ form.username.errors }}</div>
+                    {% endif %}
+                </div>
+            
+                <div class="form-group">
+                    <label for="id_email">Email Address*</label>
+                    <input type="email" class="my-form-control" name="email" id="id_email" placeholder="Enter Your Email" required>
+                    {% if form.email.errors %}
+                        <div class="text-danger">{{ form.email.errors }}</div>
+                    {% endif %}
+                </div>
+            
+                <div class="form-group">
+                    <label for="id_password1">Password*</label>
+                    <input type="password" class="my-form-control" name="password1" id="id_password1" placeholder="Enter Your Password" required>
+                    {% if form.password1.errors %}
+                        <div class="text-danger">{{ form.password1.errors }}</div>
+                    {% endif %}
+                </div>
+            
+                <div class="form-group">
+                    <label for="id_password2">Confirm Password*</label>
+                    <input type="password" class="my-form-control" name="password2" id="id_password2" placeholder="Confirm Your Password" required>
+                    {% if form.password2.errors %}
+                        <div class="text-danger">{{ form.password2.errors }}</div>
+                    {% endif %}
+                </div>
+            
+                <h4 class="content-title mt-5">Profile Details</h4>
+            
+                <div class="form-group">
+                    <label for="id_name">Full Name (Please Use Your Offcial Names)*</label>
+                    <input type="text" class="my-form-control" name="name" id="id_name" placeholder="Enter Your Full Name" required>
+                    {% if form.name.errors %}
+                        <div class="text-danger">{{ form.name.errors }}</div>
+                    {% endif %}
+                </div>
+            
+                <div class="form-group">
+                    <label for="id_birthday">Birthday*</label>
+                    <input type="date" class="my-form-control" name="birthday" id="id_birthday" required>
+                    {% if form.birthday.errors %}
+                        <div class="text-danger">{{ form.birthday.errors }}</div>
+                    {% endif %}
+                </div>
+            
+                <div class="form-group">
+                    <label>I am a*</label>
+                    <div class="option">
+                        <div class="s-input mr-3">
+                            <input type="radio" name="gender" value="Male" id="males1" required>
+                            <label for="males1">Man</label>
+                        </div>
+                        <div class="s-input">
+                            <input type="radio" name="gender" value="Female" id="females1" required>
+                            <label for="females1">Woman</label>
+                        </div>
+                    </div>
+                    {% if form.gender.errors %}
+                        <div class="text-danger">{{ form.gender.errors }}</div>
+                    {% endif %}
+                </div>
+            
+                <div class="form-group">
+                    <label>Looking for a*</label>
+                    <div class="option">
+                        <div class="s-input mr-3">
+                            <input type="radio" name="looking_for" value="Man" id="males" required>
+                            <label for="males">Man</label>
+                        </div>
+                        <div class="s-input">
+                            <input type="radio" name="looking_for" value="Woman" id="females" required>
+                            <label for="females">Woman</label>
+                        </div>
+                    </div>
+                    {% if form.looking_for.errors %}
+                        <div class="text-danger">{{ form.looking_for.errors }}</div>
+                    {% endif %}
+                </div>
+            
+                <div class="form-group">
+                    <label for="id_marital_status">Marital Status*</label>
+                    <select name="marital_status" class="select-bar" id="id_marital_status" required>
+                        <option value="Single">Single</option>
+                        <option value="Married">Married</option>
+                        <option value="Divorced">Divorced</option>
+                    </select>
+                    {% if form.marital_status.errors %}
+                        <div class="text-danger">{{ form.marital_status.errors }}</div>
+                    {% endif %}
+                </div>
+            
+                <div class="form-group">
+                    <label for="id_city">City*</label>
+                    <input type="text" class="my-form-control" name="city" id="id_city" placeholder="Enter Your City" required>
+                    {% if form.city.errors %}
+                        <div class="text-danger">{{ form.city.errors }}</div>
+                    {% endif %}
+                </div>
+            
+                <button type="submit" class="custom-button">Create Your Profile</button>
+            </form>
+            
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Login & Registation Section ========== -->
+
+
+
+  <script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'assets/js/modernizr-3.6.0.min.js' %}"></script>
+  <script src="{% static 'assets/js/plugins.js' %}"></script>
+  <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'assets/js/heandline.js' %}"></script>
+  <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
+  <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'assets/js/wow.min.js' %}"></script>
+  <script src="{% static 'assets/js/countdown.min.js' %}"></script>
+  <script src="{% static 'assets/js/odometer.min.js' %}"></script>
+  <script src="{% static 'assets/js/viewport.jquery.js' %}"></script>
+  <script src="{% static 'assets/js/nice-select.js' %}"></script>
+  <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+</html>
